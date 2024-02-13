@@ -5,7 +5,6 @@ This Python application uses Wikipedia texts of popular programming languages an
 ## Prerequisites
 * Install Python3
 * Install Docker
-* Install 
 
 ## Set up the application
 Download the application and provide settings specific to your deployment:
@@ -42,7 +41,7 @@ Download the application and provide settings specific to your deployment:
 
 3. Configure the application environment variables in `{project_directory/.env}`.
 
-# Get Started with YugabyteDB
+## Get Started with YugabyteDB
 
 Start a 3-node YugabyteDB cluster in Docker (or feel free to use another deployment option):
 
@@ -78,7 +77,7 @@ The database connectivity settings are provided in the `{project_dir}/.env` file
 
 Navigate to the YugabyteDB UI to confirm that the database is up and running, at <http://127.0.0.1:15433>.
 
-# Get Started with LocalAI
+## Get Started with LocalAI
 
 Running [LocalAI](https://localai.io/basics/getting_started/) on your machine, or on a virtual machine, requires sufficient hardware. Be sure to check the specifications before installation. This application uses Docker to run a BERT text-embedding model.
 
@@ -100,7 +99,7 @@ curl http://localhost:8080/embeddings -X POST -H "Content-Type: application/json
 ```
 
 
-# Load the Schema and Seed Data
+## Load the Schema and Seed Data
 
 This application requires a database table with information about popular programming languages. This schema includes a `programming_languages` table.
 
@@ -120,7 +119,7 @@ This application requires a database table with information about popular progra
     docker exec -it yugabytedb-node1 bin/ysqlsh -h yugabytedb-node1 -f /home/data.sql
     ```
 
-# Start the Application
+## Start the Application
 
 This command-line application takes an input in natural language and returns a response from YugabyteDB. By converting text to embeddings, a similarity search is executed using `pgvector`.
 

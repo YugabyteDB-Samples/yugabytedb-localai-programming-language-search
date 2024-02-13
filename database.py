@@ -19,7 +19,7 @@ def connect_to_db():
     )
 
 # Function to execute a SQL query
-def execute_sql_query(db_connection, name, summary, embeddings):
+def insert_programming_language(db_connection, name, summary, embeddings):
     try: 
         print(db_connection)
         print(name)

@@ -2,7 +2,7 @@ import wikipediaapi
 import requests
 import json
 from transformers import BertTokenizer
-from database import connect_to_db, execute_sql_query
+from database import connect_to_db, insert_programming_language
 from dotenv import load_dotenv
 import os
 # Load environment variables from .env file
@@ -54,7 +54,7 @@ def get_page(page_title):
     if page.exists() == False:
         page = wiki_wiki.page(language)
     print(page)
-    return page.summary;
+    return page.summary
 
 
 programming_languages = [
@@ -80,7 +80,7 @@ def main():
                 embeddings = json_response["data"][0]["embedding"]
 
                 db_connection = connect_to_db()
-                execute_sql_query(db_connection, name=language, summary=text, embeddings=embeddings)
+                insert_programming_language(db_connection, name=language, summary=text, embeddings=embeddings)
             finally:
                 db_connection.close()
 
