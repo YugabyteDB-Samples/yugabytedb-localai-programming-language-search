@@ -11,7 +11,7 @@ DB_HOST, DB_NAME, DB_USERNAME, DB_PASSWORD, DB_PORT = get_env_vars('DB_HOST', 'D
 # Function to connect to the PostgreSQL database
 def connect_to_db():
     return psycopg2.connect(
-        dbname=DB_HOST,
+        dbname=DB_NAME,
         user=DB_USERNAME,
         password=DB_PASSWORD,
         host=DB_HOST,
